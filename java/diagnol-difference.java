@@ -4,7 +4,7 @@ Complete the diagonalDifference function which takes a 2D integer array as a par
 and return an integer denoting the absolute difference between the diagonal sums.
  */
 
- import java.io.*;
+import java.io.*;
 import java.math.*;
 import java.text.*;
 import java.util.*;
@@ -15,11 +15,18 @@ public class Solution {
     /*
      * Complete the diagonalDifference function below.
      */
-    static void diagonalDifference(int[][] a) {
+    static int diagonalDifference(int[][] a,int n) {
         /*
          * Write your code here.
          */
-         System.out.print(a.length);
+                int majorDiagnolSum = 0;
+        int minorDiagnolSum = 0;
+        for(int i = 0; i < n; i++ ) {
+            majorDiagnolSum += a[i][i];
+            minorDiagnolSum += a[i][n-i-1];
+        }
+        int difference = majorDiagnolSum - minorDiagnolSum;
+        return difference<0 ? -difference : difference;
 
     }
 
@@ -41,8 +48,8 @@ public class Solution {
             }
         }
 
-        // int result = diagonalDifference(a);
-        diagonalDifference(a);
+        int result = diagonalDifference(a,n);
+
         bw.write(String.valueOf(result));
         bw.newLine();
 
