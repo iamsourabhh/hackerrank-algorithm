@@ -13,7 +13,7 @@ public class Solution {
         /*
          * Write your code here.
          */
-        long minElement = 999999999999,maxElement = 0, sum = 0;
+        long minElement = 999999999,maxElement = 0, sum = 0;
         for (long element: arr) {
             if(minElement > element) {
                 minElement = element;
